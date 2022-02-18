@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Onboarding{% endblock %}
+
+{% block body %}
+    <h1>Onboarding</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ onboarding.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ onboarding.email }}</td>
+            </tr>
+            <tr>
+                <th>Step</th>
+                <td>{{ onboarding.step }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('onboarding_index') }}">back to list</a>
+
+    <a href="{{ path('onboarding_edit', {'id': onboarding.id}) }}">edit</a>
+
+    {{ include('onboarding/_delete_form.html.twig') }}
+{% endblock %}

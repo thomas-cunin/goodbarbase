@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Onboarding{% endblock %}
+
+{% block body %}
+    <h1>Edit Onboarding</h1>
+
+    {{ include('onboarding/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('onboarding_index') }}">back to list</a>
+
+    {{ include('onboarding/_delete_form.html.twig') }}
+{% endblock %}

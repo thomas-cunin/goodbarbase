@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Onboarding index{% endblock %}
+
+{% block body %}
+    <h1>Onboarding index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Step</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for onboarding in onboardings %}
+            <tr>
+                <td>{{ onboarding.id }}</td>
+                <td>{{ onboarding.email }}</td>
+                <td>{{ onboarding.step }}</td>
+                <td>
+                    <a href="{{ path('onboarding_show', {'id': onboarding.id}) }}">show</a>
+                    <a href="{{ path('onboarding_edit', {'id': onboarding.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('onboarding_new') }}">Create new</a>
+{% endblock %}
