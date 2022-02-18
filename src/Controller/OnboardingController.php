@@ -92,7 +92,7 @@ class OnboardingController extends AbstractController
     }
 
     /**
-     * @Route("/rmact", name="onboarding_remote_action", methods={"GET"})
+     * @Route("/rmact", name="onboarding_remote_action", methods={"GET"}, priority="1")
      */
     public function remoteAction(Request $request,OnboardingRepository $OBR,EntityManagerInterface $entityManager): Response
     {
